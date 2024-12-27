@@ -1,4 +1,4 @@
 class Task < ApplicationRecord
   belongs_to :group
-  enum :status, []
+  enum :status, [:inprogress, :completed, :archieved]
 end
