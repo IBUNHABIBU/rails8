@@ -4,7 +4,9 @@ class TasksController < ApplicationController
 
   # GET /tasks or /tasks.json
   def index
-    @tasks = Task.all
+    tasks = Current.user.group.tasks.group_by(&:status)
+    @inprogres_tasks= tasks.fetch("inprogress", [])
+    @completed_tasks= tasks.fetch("completed", [])
   end
 
   # GET /tasks/1 or /tasks/1.json
