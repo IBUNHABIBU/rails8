@@ -1,11 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+my_family:
+  name: My Family
 
-one:
-  name: MyString
-  user: one
-  task: one
-
-two:
-  name: MyString
-  user: two
-  task: two
+another_family:
+  name: Another Family
