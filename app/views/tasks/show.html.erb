@@ -1,10 +1,11 @@
-<p style="color: green"><%= notice %></p>
+<% if notice.present? %>
+  <div popover class="flash" style="--flash-position: 5rem;" data-controller="element-removal" data-action="animationend->element-removal#remove" role="alert"><%= notice %></div>
+<% end %>
 
 <%= render @task %>
 
-<div>
-  <%= link_to "Edit this task", edit_task_path(@task) %> |
-  <%= link_to "Back to tasks", tasks_path %>
-
-  <%= button_to "Destroy this task", @task, method: :delete %>
+<div class="flex flex-wrap items-center gap mbs-6" style="--row-gap: .5rem">
+  <%= link_to "Edit this task", edit_task_path(@task), class: "btn" %>
+  <%= link_to "Back to tasks", tasks_path, class: "btn" %>
+  <%= button_to "Destroy this task", @task, method: :delete, class: "btn" %>
 </div>

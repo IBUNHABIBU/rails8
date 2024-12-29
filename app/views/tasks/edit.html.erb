@@ -1,12 +1,10 @@
 <% content_for :title, "Editing task" %>
 
-<h1>Editing task</h1>
+<h1 class="font-bold text-4xl mbe-4">Editing task</h1>
 
 <%= render "form", task: @task %>
 
-<br>
-
-<div>
-  <%= link_to "Show this task", @task %> |
-  <%= link_to "Back to tasks", tasks_path %>
+<div class="inline-flex flex-wrap items-center gap mbs-2" style="--row-gap: .5rem">
+  <%= link_to "Show this task", @task, class: "btn" %>
+  <%= link_to "Back to tasks", tasks_path, class: "btn" %>
 </div>

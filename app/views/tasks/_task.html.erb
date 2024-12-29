@@ -1,17 +1,10 @@
-<div id="<%= dom_id task %>">
-  <p>
-    <strong>Name:</strong>
-    <%= task.name %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= task.description %>
-  </p>
-
-  <p>
-    <strong>Group:</strong>
-    <%= task.group_id %>
-  </p>
-
+<div id="<%= dom_id task %>" class="flex flex-col gap">
+  <div class="flex flex-col gap-half">
+    <h4 class="font-medium leading-none">Name:</h4>
+    <p class="leading-none"><%= task.name %></p>
+  </div>
+  <div class="flex flex-col gap-half">
+    <h4 class="font-medium leading-none">Description:</h4>
+    <p class="leading-none"><%= task.description %></p>
+  </div>
 </div>
