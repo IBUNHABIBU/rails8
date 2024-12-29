@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   resources :tasks
-  resource :session
-  resources :passwords, param: :token
   resources :groups
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
