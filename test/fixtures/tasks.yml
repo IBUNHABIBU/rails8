@@ -16,7 +16,7 @@ second_task:
 third_task:
   name: Clean House
   description: Clean up the kitchen and put away the dishes
-  status: completed
+  status: complete'
   group: my_family
 
 

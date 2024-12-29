@@ -1,6 +1,5 @@
 class TasksController < ApplicationController
   before_action :set_task, only: %i[ show edit update destroy ]
-  allow_unauthenticated_access only: %i[index]
 
   # GET /tasks or /tasks.json
   def index
@@ -24,7 +23,7 @@ class TasksController < ApplicationController
 
   # POST /tasks or /tasks.json
   def create
-    @task = Task.new(task_params)
+    @task = Current.user.group.tasks.new(task_params)
 
     respond_to do |format|
       if @task.save
@@ -68,6 +67,6 @@ class TasksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def task_params
-      params.expect(task: [ :name, :description ])
+      params.expect(task: [ :name, :description, :status])
     end
 end
