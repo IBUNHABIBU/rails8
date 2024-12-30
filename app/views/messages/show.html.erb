@@ -1,0 +1,11 @@
+<% if notice.present? %>
+  <div popover class="flash" style="--flash-position: 5rem;" data-controller="element-removal" data-action="animationend->element-removal#remove" role="alert"><%= notice %></div>
+<% end %>
+
+<%= render @message %>
+
+<div class="flex flex-wrap items-center gap mbs-6" style="--row-gap: .5rem">
+  <%= link_to "Edit this message", edit_message_path(@message), class: "btn" %>
+  <%= link_to "Back to messages", messages_path, class: "btn" %>
+  <%= button_to "Destroy this message", @message, method: :delete, class: "btn" %>
+</div>

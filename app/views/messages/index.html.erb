@@ -1,0 +1,19 @@
+<% if notice.present? %>
+  <div popover class="flash" style="--flash-position: 5rem;" data-controller="element-removal" data-action="animationend->element-removal#remove" role="alert"><%= notice %></div>
+<% end %>
+
+<% content_for :title, "Messages" %>
+
+<div class="flex items-center justify-between mbe-4">
+  <h1 class="font-bold text-4xl">Messages</h1>
+  <%= link_to "New message", new_message_path, class: "btn btn--primary" %>
+</div>
+
+<div id="messages" class="flex flex-col" style="gap: 2rem;">
+  <% @messages.each do |message| %>
+    <div class="flex flex-col items-start gap">
+      <%= render message %>
+      <%= link_to "Show this message", message, class: "btn" %>
+    </div>
+  <% end %>
+</div>
