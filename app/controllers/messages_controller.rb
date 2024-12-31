@@ -2,26 +2,27 @@ class MessagesController < ApplicationController
   before_action :set_message, only: %i[ show edit update destroy ]
 
   # GET /messages or /messages.json
-  def index
-    @messages = Message.all
-  end
+  # def index
+  #   @messages = Message.all
+  # end
 
-  # GET /messages/1 or /messages/1.json
-  def show
-  end
+  # # GET /messages/1 or /messages/1.json
+  # def show
+  # end
 
   # GET /messages/new
-  def new
-    @message = Message.new
-  end
+  # def new
+  #   @message = Message.new
+  # end
 
   # GET /messages/1/edit
-  def edit
-  end
+  # def edit
+  # end
 
   # POST /messages or /messages.json
   def create
-    @message = @task.messages.new(message_params)
+    debug
+    @message = @task.messages.create(message_params)
     @message.user = Current.user
     
 
@@ -65,12 +66,12 @@ class MessagesController < ApplicationController
       @task ||= Task.find(params[:task_id])
     end
 
-    def set_message
-      @message = Message.find(params.expect(:id))
-    end
+    # def set_message
+    #   @message = Message.find(params.expect(:id))
+    # end
 
     # Only allow a list of trusted parameters through.
     def message_params
-      params.expect(message: [ :content, :user_id, :task_id ])
+      params.expect(message: [ :content])
     end
 end
