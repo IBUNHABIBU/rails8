@@ -1,24 +1,38 @@
-# README
+A Record	
+@
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+75.2.60.5
 
-Things you may want to cover:
+Automatic
 
-* Ruby version
+Remove
+A Record	
+@
 
-* System dependencies
+198.51.44.3
 
-* Configuration
+Automatic
 
-* Database creation
+Remove
+A Record	
+@
 
-* Database initialization
+198.51.45.3
 
-* How to run the test suite
+Automatic
 
-* Services (job queues, cache servers, search engines, etc.)
+Remove
+A Record	
+@
 
-* Deployment instructions
+198.51.44.67
 
-* ...
+Automatic
+
+Remove
+A Record	
+@
+
+198.51.45.67
+
+Automatic
