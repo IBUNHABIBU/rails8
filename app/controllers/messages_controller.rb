@@ -21,11 +21,13 @@ class MessagesController < ApplicationController
 
   # POST /messages or /messages.json
   def create
-    @message = Message.new(message_params)
+    @message = @task.messages.new(message_params)
+    @message.user = Current.user
+    
 
     respond_to do |format|
       if @message.save
-        format.html { redirect_to @message, notice: "Message was successfully created." }
+        format.html { redirect_to task_path(@task), notice: "Message was successfully created." }
         format.json { render :show, status: :created, location: @message }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -59,6 +61,10 @@ class MessagesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def set_task 
+      @task ||= Task.find(params[:task_id])
+    end
+
     def set_message
       @message = Message.find(params.expect(:id))
     end
