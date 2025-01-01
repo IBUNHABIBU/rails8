@@ -16,12 +16,12 @@
 <div id="tasks" class="flex flex-col" style="gap: 2rem;">
     <div class="flex flex-col items-start gap">
       <h3  class="font-bold text-xl">In Progress</h3>
-      <%= render partial: "tasks/task", collection: @inprogres_tasks %>
+      <%= render partial: "tasks/task", collection: @inprogres_tasks, cached: true %>
     </div>
 
     <div class="flex flex-col items-start gap">
     <h3  class="font-bold text-xl">Completed</h3>
-    <%= render  partial: "tasks/task", collection: @completed_tasks %>
+    <%= render  partial: "tasks/task", collection: @completed_tasks, cached: true %>
   </div>
 </div>
 
