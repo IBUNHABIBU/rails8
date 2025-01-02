@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_30_173203) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_02_165748) do
   create_table "groups", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -25,6 +25,12 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_30_173203) do
     t.datetime "updated_at", null: false
     t.index ["task_id"], name: "index_messages_on_task_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "sessions", force: :cascade do |t|
