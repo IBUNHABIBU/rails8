@@ -1,2 +1,5 @@
-sw:
+es:
   hello: "Mambo vp"
+  products:
+    index:
+      title: "Bidhaa"
