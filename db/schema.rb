@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_09_043854) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_10_204905) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -81,6 +81,14 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_09_043854) do
     t.index ["user_id"], name: "index_sessions_on_user_id"
   end
 
+  create_table "subscribers", force: :cascade do |t|
+    t.integer "product_id", null: false
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_subscribers_on_product_id"
+  end
+
   create_table "tasks", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -106,6 +114,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_09_043854) do
   add_foreign_key "messages", "tasks"
   add_foreign_key "messages", "users"
   add_foreign_key "sessions", "users"
+  add_foreign_key "subscribers", "products"
   add_foreign_key "tasks", "groups"
   add_foreign_key "users", "groups"
 end
