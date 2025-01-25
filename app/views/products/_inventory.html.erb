@@ -13,6 +13,6 @@
   </p>
 
   <%= form_with model: [product, Subscriber.new] do |form| %>
-    <%= form.email_field
+    <%= form.email_field :email
   <% end %>
 <% end %>
