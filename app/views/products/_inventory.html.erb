@@ -11,4 +11,8 @@
   <p>
     Email me when available
   </p>
+
+  <%= form_with model: [product, Subscriber.new] do |form| %>
+    <%= form.email_field
+  <% end %>
 <% end %>
