@@ -8,4 +8,8 @@ class Product < ApplicationRecord
     def back_in_stock?
         inventory_count_previously_was.zero? && inventory_count > 0
     end
+
+    def notify_subscribers 
+    end
+    
 end
