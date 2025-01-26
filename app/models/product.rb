@@ -5,5 +5,6 @@ class Product < ApplicationRecord
     has_one_attached :featured_image
     validates :inventory_count, numericality: { greater_than_or_equal_to: 0 }
 
-    
+    def back_in_stock 
+    end
 end
