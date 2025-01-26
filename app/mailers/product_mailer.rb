@@ -6,7 +6,8 @@ class ProductMailer < ApplicationMailer
   #
   def in_stock
     @greeting = "Hi"
+    @product = params[:product]
 
-    mail to: "to@example.org"
+    mail to: params[:subscriber].email
   end
 end
