@@ -8,4 +8,10 @@ module Product::Notifications
     def back_in_stock?
         inventory_count_previously_was==0 && inventory_count > 0
     end
+
+    def notify_subscribers
+        subscribers.each do |subscribers|
+            ProductMailer.with(product: self, subscriber: subscriber).in_stock.deliver_later
+        end
+    end
 end
