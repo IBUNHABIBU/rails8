@@ -5,7 +5,6 @@ class ProductTest < ActiveSupport::TestCase
 
   test "sends email notifications when back in stock" do
     product = products(:tshirt)
-
     # Set product out of stock
     product.update(inventory_count: 0)
 
